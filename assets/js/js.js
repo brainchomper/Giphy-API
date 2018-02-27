@@ -41,20 +41,19 @@ function resetTopics() {
 
 //AJAX display gifs
 function gifDisplay() {
-	$("#topicBtns").on("click", function () {
 		// In this case, the "this" keyword refers to the button that was clicked
 		var topic = $(this).attr("data-name");
-
+console.log(topic);
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
 			topic + "&api_key=4bYEG1bACH57HbpCkh1wQ3S9so0mX1Rn&limit=10";
-
+console.log(queryURL);
 		// Performing our AJAX GET request
 		$.ajax({
 			url: queryURL,
 			method: "GET"
 		}).done(function (response) {
 			console.log(response);
-			$('#gifResult').empty();
+			$('#gifResults').empty();
 			// $("#gifResults").text(JSON.stringify(response));
 			var results = response.data;
 			if (results == '') {
@@ -68,17 +67,16 @@ function gifDisplay() {
 				gifDiv.append(gifRating);
 				// gettign gif
 				var gifImage = $('<img>');
-				gifImage.attr('src', results[i].images.fixed_height_small_still.url);
+				gifImage.attr('src', results[i].images.fixed_height_still.url);
 				gifImage.addClass('img-responsive');
 				gifImage.addClass('image')
-				gifImage.attr('data-still', results[i].images.fixed_height_small_still.url);
-				gifImage.attr('data-animate', results[i].images.fixed_height_small.url);
+				gifImage.attr('data-still', results[i].images.fixed_height_still.url);
+				gifImage.attr('data-animate', results[i].images.fixed_height.url);
 				gifImage.attr('data-state', 'still');
-				gifDiv.append(gifImage);
+				gifDiv.prepend(gifImage);
 				$('#gifResults').prepend(gifDiv);
 			};
 		})
-	});
 };
 //initialize functions
 makeGifBtns();

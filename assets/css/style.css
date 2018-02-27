@@ -3,4 +3,10 @@ html {
 }
 .gifDiv {
 	float: left;
+margin: 5px;
+}
+.btn-info{
+	background-color: steelblue;
+	border-color: slateblue;
+	margin: 5px;
 }
