@@ -69,7 +69,7 @@ console.log(queryURL);
 				var gifImage = $('<img>');
 				gifImage.attr('src', results[i].images.fixed_height_still.url);
 				gifImage.addClass('img-responsive');
-				gifImage.addClass('image')
+				gifImage.addClass('image');
 				gifImage.attr('data-still', results[i].images.fixed_height_still.url);
 				gifImage.attr('data-animate', results[i].images.fixed_height.url);
 				gifImage.attr('data-state', 'still');
