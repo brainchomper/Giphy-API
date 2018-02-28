@@ -13,9 +13,36 @@
 	<title>Giphy API Homework</title>
 </head>
 
-<body>
-	<nav>
-		<!-- Nav Content Here -->
+<body onload="getYear()">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../../index.html">
+					<img src="./assets/images/logo.png" alt="Kevin Smith">
+				</a>
+			</div>
+			<div id="navbar2" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="https://brainchomper.github.io">Home</a>
+					</li>
+					<li class="active">
+						<a href="https://brainchomper.github.io/portfolio.html">Portfolio</a>
+					</li>
+					<li>
+						<a href="https://brainchomper.github.io/contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
 	</nav>
 
 	<section>
@@ -23,29 +50,39 @@
 			<div class="row">
 				<div class="col-md-12" id="topicBtns"></div>
 			</div>
-		</div>
+			<div class="container-fluid"></div>
 			<div class="row">
-			<div class="col-md-9" id="gifResults"></div>
-			<div class="col-md-3" id="gifForm">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<form>
+				<div class="col-md-3" id="gifForm">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form>
 								<label for="topicInput">Add A New Topic</label>
 								<input type="text" class="form-control" id="topicInput">
-								<p id="message"></p>
+								<p id="message" class="message"></p>
 								<input type="submit" class="btn btn-primary" id="addTopic" value="Add New Topic">
 								<input type="submit" class="btn btn-danger" id="clearTopics" value="Clear Added Topics">
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
+				<div class="col-md-9" id="gifResults"></div>
+				
+				<!-- end container-fluid -->
 			</div>
-		<!-- end container-fluid -->
 		</div>
 	</section>
 
 	<footer>
-		<!-- Footer Content Here -->
-	</footer>
+		<p>&copy;
+			<span id="btmfooter"></span> Kevin Smith</p>
+		<script>
+			function getYear() {
+				var d = new Date();
+				var n = d.getFullYear();
+				document.getElementById("btmfooter").innerHTML = n;
+			}
+		</script>
+		</footer>
 	<script src="./assets/js/js.js"></script>
 </body>
 

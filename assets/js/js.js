@@ -1,4 +1,4 @@
-var topics = ['South Park', 'Rick & Morty', 'Archer', 'Game Of Thrones'];
+var topics = ['South Park', 'Rick & Morty', 'Archer', 'Game Of Thrones', 'Futurama', 'The Simpsons', 'Family Guy'];
 
 //display topics array into buttons
 function makeGifBtns() {
