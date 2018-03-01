@@ -19,7 +19,7 @@ function newTopics() {
 		event.preventDefault();
 		var topic = $('#topicInput').val().trim();
 		if (topic == "") {
-			$('#message').text('Enter A New Topic')
+			$('#message').text('Enter A New Topic');
 			return false;
 		} else
 			topics.push(topic);
