@@ -36,9 +36,6 @@ function resetTopics() {
 	})
 }
 
-//
-
-
 //AJAX display gifs
 function gifDisplay() {
 		// In this case, the "this" keyword refers to the button that was clicked
